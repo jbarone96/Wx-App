@@ -31,7 +31,7 @@ function Details({
         <p className="text-5xl">{`${temp.toFixed()}°`}</p>
         <div className="flex flex-col space-y-2">
           <div className="flex font-light text-sm items-center justify-center">
-            <FaThermometerHalf size={18} className="mr-2" />
+            <FaThermometerHalf size={18} className="mr-1" />
             Feels Like:
             <span className="font-medium ml-1">{`${feels_like.toFixed()}°`}</span>
           </div>
