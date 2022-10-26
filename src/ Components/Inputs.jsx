@@ -1,35 +1,10 @@
 import React, { useState } from "react";
-import { UilSearchAlt, UilLocationArrow } from "@iconscout/react-unicons";
+import { BsSearch } from "react-icons/bs";
+import { BiCurrentLocation } from "react-icons/bi";
 import { toast } from "react-toastify";
 
 function Inputs({ setQuery, units, setUnits }) {
   const [city, setCity] = useState("");
-
-  // if (reviewData.text == "") {
-  //   const toaster = toast.loading(
-  //     "Please wait...",
-  //     setTimeout(() => {
-  //       toast.update(toaster, {
-  //         render: "Please fill out all fields!",
-  //         type: "error",
-  //         isLoading: false,
-  //         autoClose: 5000,
-  //       });
-  //     }, 1500)
-  //   );
-  // } else {
-  //   const toaster = toast.loading(
-  //     "Please wait...",
-  //     setTimeout(() => {
-  //       toast.update(toaster, {
-  //         render: "Review posted successfully!",
-  //         type: "success",
-  //         isLoading: false,
-  //         autoClose: 5000,
-  //       });
-  //     }, 1000)
-  //   );
-  // }
 
   const handleSearch = () => {
     if (city !== "") {
@@ -53,22 +28,6 @@ function Inputs({ setQuery, units, setUnits }) {
           autoClose: 2000,
         });
 
-        // toast.update(toaster, {
-        //   render: `Successfully loaded weather for ${city.name}, ${city.country}!`,
-        //   type: "success",
-        //   isLoading: false,
-        //   autoClose: 3000,
-        // });
-
-        // setTimeout(() => {
-        //   toast.update(toaster, {
-        //     render: `Successfully loaded weather for ${city.name}`,
-        //     type: "success",
-        //     isLoading: false,
-        //     autoClose: 3000,
-        //   });
-        // }, 2000);
-
         setQuery({
           lat,
           lon,
@@ -85,22 +44,23 @@ function Inputs({ setQuery, units, setUnits }) {
   };
 
   return (
-    <div className="flex flex-row justify-center ">
+    <div className="flex flex-row justify-center ml-10">
       <div className="flex flex-row w-3/4 my-6 items-center justify-center space-x-4">
         <input
+          id="search"
           value={city}
           onChange={(e) => setCity(e.currentTarget.value)}
           type="text"
           className="text-lg font-light p-2 w-full shadow-lg focus:outline-none capitalize"
           placeholder="Search for city..."
         />
-        <UilSearchAlt
+        <BsSearch
           size={25}
           className="text-white cursor-pointer transition ease-out hover:scale-125"
           onClick={handleSearch}
         />
-        <UilLocationArrow
-          size={25}
+        <BiCurrentLocation
+          size={32}
           className="text-white cursor-pointer transition ease-out hover:scale-125"
           onClick={handleLocation}
         />
@@ -108,12 +68,12 @@ function Inputs({ setQuery, units, setUnits }) {
       <div className="flex flex-row w-1/4 items-center justify-center">
         <button
           name="imperial"
-          className="text-xl text-white font-light hover:scale-125 transition ease-out"
+          className="text-xl text-white font-light ml-8 hover:scale-125 transition ease-out"
           onClick={handleUnitChange}
         >
           °F
         </button>
-        <p className="text-xl text-white mx-2">|</p>
+        <p className="text-xl text-white mx-2 font-semibold">|</p>
         <button
           name="metric"
           className="text-xl text-white font-light hover:scale-125 transition ease-out"

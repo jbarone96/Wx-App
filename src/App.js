@@ -27,14 +27,6 @@ function App() {
           isLoading: false,
           autoClose: 3000,
         });
-        // setTimeout(() => {
-        //   toast.update(toaster, {
-        //     render: `Successfully loaded weather for ${data.name}, ${data.country}`,
-        //     type: "success",
-        //     isLoading: false,
-        //     autoClose: 3000,
-        //   });
-        // }, 500);
 
         setWeather(data);
       });
@@ -60,8 +52,8 @@ function App() {
   return (
     <>
       <div
-        className={`mx-auto max-w-screen-lg shadow-xl mt-4 py-5 px-32 bg-gradient-to-b from-cyan-600 to-blue-500 h-fit shadow-gray-500
-        `}
+        className={`mx-auto max-w-screen-lg shadow-3xl mt-4 mb-4 py-5 px-32 bg-gradient-to-b from-cyan-600 to-blue-500 h-fit 
+        shadow-black-600 rounded-md`}
       >
         <TopButtons setQuery={setQuery} />
         <Inputs setQuery={setQuery} units={units} setUnits={setUnits} />

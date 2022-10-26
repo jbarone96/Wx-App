@@ -3,7 +3,7 @@ import { getIcon } from "../Services/weatherService";
 
 function Forecast({ title, items }) {
   return (
-    <div>
+    <div className="mb-8">
       <div className="flex items-center justify-start mt-6">
         <p className="text-white font-medium">{title}</p>
       </div>

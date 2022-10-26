@@ -5,6 +5,7 @@
 
 @layer base {
   html {
+    background-color: rgba(0, 26, 122, 0.842);
     font-family: 'Inter', sans-serif;
   }
 }
